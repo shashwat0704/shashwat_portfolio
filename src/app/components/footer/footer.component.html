@@ -33,7 +33,7 @@
 
       <!-- Contact Form -->
       <div class="reveal">
-        <form action="https://formspree.io/f/mojrjoeg" method="POST" class="space-y-6 bg-brand-nav/20 p-10 rounded-3xl border border-white/5 glow-border">
+        <form (submit)="onSubmit($event)" class="space-y-6 bg-brand-nav/20 p-10 rounded-3xl border border-white/5 glow-border">
           <div class="grid grid-cols-2 gap-6">
             <div class="space-y-2">
               <label class="text-xs font-mono text-gray-500 uppercase tracking-widest ml-1">Name</label>
@@ -55,9 +55,18 @@
             <textarea name="message" required rows="4" placeholder="How can I help you?" class="w-full bg-brand-dark/50 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brand-green/50 transition-colors resize-none"></textarea>
           </div>
 
-          <button type="submit" class="w-full py-5 bg-brand-green text-black font-bold rounded-xl hover:shadow-[0_0_20px_#6ab01d] transition-all duration-300">
-            Send Message
+          <button type="submit" [disabled]="submitting" class="w-full py-5 bg-brand-green text-black font-bold rounded-xl hover:shadow-[0_0_20px_#6ab01d] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+            <span *ngIf="!submitting">Send Message</span>
+            <span *ngIf="submitting">Sending...</span>
           </button>
+
+          <div *ngIf="submitted" class="p-4 bg-brand-green/10 border border-brand-green/20 rounded-xl text-brand-green text-center font-medium animate-pulse">
+            Thanks! Your message has been sent successfully.
+          </div>
+
+          <div *ngIf="error" class="p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-500 text-center font-medium">
+            Oops! Something went wrong. Please try again.
+          </div>
         </form>
       </div>
     </div>
