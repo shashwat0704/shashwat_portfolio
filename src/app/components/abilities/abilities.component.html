@@ -1,19 +1,19 @@
-<section id="abilities" class="py-32 px-8 md:px-24 bg-brand-dark">
+<section id="abilities" class="py-20 md:py-32 px-6 md:px-24 bg-brand-dark">
   <div class="max-w-6xl mx-auto">
-    <div class="mb-16">
-      <h2 class="text-[56px] font-bold mb-6 tracking-tighter">Abilities</h2>
-      <p class="text-[12px] font-bold text-gray-500 uppercase tracking-[0.2em]">Disciplines</p>
+    <div class="mb-12 md:mb-16">
+      <h2 class="text-4xl md:text-[56px] font-bold mb-4 md:mb-6 tracking-tighter">Abilities</h2>
+      <p class="text-[10px] md:text-[12px] font-bold text-gray-500 uppercase tracking-[0.2em]">Disciplines</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
       @for (ability of abilities; track ability.title) {
-        <div class="reveal group p-10 rounded-3xl bg-brand-nav/40 border border-white/5 hover:border-brand-green/30 transition-all duration-500 h-full flex flex-col glow-border">
-          <div class="mb-10">
-            <h3 class="text-2xl font-bold mb-1">{{ ability.title }}</h3>
+        <div class="reveal group p-8 md:p-10 rounded-3xl bg-brand-nav/40 border border-white/5 hover:border-brand-green/30 transition-all duration-500 h-full flex flex-col glow-border">
+          <div class="mb-6 md:mb-10">
+            <h3 class="text-xl md:text-2xl font-bold mb-1">{{ ability.title }}</h3>
           </div>
           
-          <div class="mb-10">
-            <div class="flex justify-between text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2">
+          <div class="mb-6 md:mb-10">
+            <div class="flex justify-between text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2">
               <span class="opacity-40 font-mono">Proficiency</span>
               <span>{{ ability.level }}</span>
             </div>
@@ -23,13 +23,13 @@
             </div>
           </div>
 
-          <p class="text-[15px] text-gray-400 leading-[1.6] mb-10 flex-grow">
+          <p class="text-sm md:text-[15px] text-gray-400 leading-relaxed md:leading-[1.6] mb-6 md:mb-10 flex-grow">
             {{ ability.description }}
           </p>
 
           <div class="flex flex-wrap gap-2 mt-auto">
             @for (skill of ability.skills; track skill) {
-              <span class="px-3 py-1 bg-white/5 rounded-full text-[10px] font-mono text-gray-500 border border-white/5">
+              <span class="px-2 md:px-3 py-1 bg-white/5 rounded-full text-[9px] md:text-[10px] font-mono text-gray-500 border border-white/5">
                 {{ skill }}
               </span>
             }

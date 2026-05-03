@@ -1,18 +1,18 @@
-<section id="tech-skills" class="py-32 px-8 md:px-24 bg-brand-dark">
+<section id="tech-skills" class="py-20 md:py-32 px-6 md:px-24 bg-brand-dark">
   <div class="max-w-6xl mx-auto">
-    <div class="mb-20">
-      <h2 class="text-[56px] font-bold mb-6 tracking-tighter">Stack</h2>
-      <p class="text-[12px] font-bold text-gray-500 uppercase tracking-[0.2em]">Technologies & Methodology</p>
+    <div class="mb-12 md:mb-20">
+      <h2 class="text-4xl md:text-[56px] font-bold mb-4 md:mb-6 tracking-tighter">Stack</h2>
+      <p class="text-[10px] md:text-[12px] font-bold text-gray-500 uppercase tracking-[0.2em]">Technologies & Methodology</p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-12">
+    <div class="grid md:grid-cols-2 gap-8 md:gap-12">
       @for (group of skillGroups; track group.category) {
-        <div class="reveal space-y-6">
-          <h3 class="text-sm font-mono text-brand-green uppercase tracking-widest">{{ group.category }}</h3>
-          <div class="flex flex-wrap gap-3">
+        <div class="reveal space-y-4 md:space-y-6">
+          <h3 class="text-xs md:text-sm font-mono text-brand-green uppercase tracking-widest">{{ group.category }}</h3>
+          <div class="flex flex-wrap gap-2 md:gap-3">
             @for (skill of group.skills; track skill) {
-              <div class="px-5 py-3 rounded-2xl bg-brand-nav/40 border border-white/5 hover:border-brand-green/30 hover:bg-brand-nav/60 transition-all duration-300 cursor-default group glow-border">
-                <span class="text-[14px] text-gray-400 group-hover:text-white transition-colors">{{ skill }}</span>
+              <div class="px-4 md:px-5 py-2 md:py-3 rounded-xl md:rounded-2xl bg-brand-nav/40 border border-white/5 hover:border-brand-green/30 hover:bg-brand-nav/60 transition-all duration-300 cursor-default group glow-border">
+                <span class="text-xs md:text-[14px] text-gray-400 group-hover:text-white transition-colors">{{ skill }}</span>
               </div>
             }
           </div>

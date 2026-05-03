@@ -12,9 +12,11 @@ export class NavbarComponent {
   isVisible = true;
   lastScrollTop = 0;
   isHovered = false;
+  isMenuOpen = false;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
+    if (this.isMenuOpen) return; // Don't hide navbar if menu is open
     const st = window.pageYOffset || document.documentElement.scrollTop;
     
     // If scrolling down and past the navbar area, hide it
@@ -34,5 +36,13 @@ export class NavbarComponent {
 
   onMouseLeave() {
     this.isHovered = false;
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
   }
 }
