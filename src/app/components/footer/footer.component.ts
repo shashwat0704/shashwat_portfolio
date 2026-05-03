@@ -25,15 +25,22 @@ export class FooterComponent {
     this.submitting = true;
     this.error = false;
 
-    this.http.post('https://formspree.io/f/mojrjoeg', formData).subscribe({
-      next: () => {
+    this.http.post('https://formspree.io/f/mojrjoeg', formData, {
+      headers: { 'Accept': 'application/json' }
+    }).subscribe({
+      next: (response) => {
         this.submitting = false;
         this.submitted = true;
+        this.error = false;
         form.reset();
+        // Hide success message after 5 seconds
+        setTimeout(() => this.submitted = false, 5000);
       },
-      error: () => {
+      error: (err) => {
         this.submitting = false;
         this.error = true;
+        this.submitted = false;
+        console.error('Formspree Error:', err);
       }
     });
   }
