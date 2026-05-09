@@ -35,9 +35,16 @@
               }
             </div>
 
-            <p class="text-sm md:text-[15px] text-gray-400 leading-relaxed md:leading-[1.6]">
-              {{ exp.description }}
-            </p>
+            <ul class="space-y-3">
+              @for (point of exp.highlights; track point) {
+                <li class="flex gap-3 text-sm md:text-[15px] text-gray-400 leading-relaxed">
+                  <span class="text-brand-green mt-1.5 flex-shrink-0">
+                    <svg class="w-1.5 h-1.5" fill="currentColor" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
+                  </span>
+                  {{ point }}
+                </li>
+              }
+            </ul>
           </div>
         </div>
       }

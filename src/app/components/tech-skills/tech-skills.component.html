@@ -5,14 +5,15 @@
       <p class="text-[10px] md:text-[12px] font-bold text-gray-500 uppercase tracking-[0.2em]">Technologies & Methodology</p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
       @for (group of skillGroups; track group.category) {
-        <div class="reveal space-y-4 md:space-y-6">
+        <div class="reveal space-y-6">
           <h3 class="text-xs md:text-sm font-mono text-brand-green uppercase tracking-widest">{{ group.category }}</h3>
-          <div class="flex flex-wrap gap-2 md:gap-3">
-            @for (skill of group.skills; track skill) {
-              <div class="px-4 md:px-5 py-2 md:py-3 rounded-xl md:rounded-2xl bg-brand-nav/40 border border-white/5 hover:border-brand-green/30 hover:bg-brand-nav/60 transition-all duration-300 cursor-default group glow-border">
-                <span class="text-xs md:text-[14px] text-gray-400 group-hover:text-white transition-colors">{{ skill }}</span>
+          <div class="space-y-4">
+            @for (skill of group.skills; track skill.name) {
+              <div class="p-5 rounded-2xl bg-brand-nav/40 border border-white/5 hover:border-brand-green/30 transition-all duration-300 group glow-border">
+                <p class="text-white font-bold text-sm mb-1 group-hover:text-brand-green transition-colors">{{ skill.name }}</p>
+                <p class="text-xs text-gray-500 leading-relaxed">{{ skill.proof }}</p>
               </div>
             }
           </div>

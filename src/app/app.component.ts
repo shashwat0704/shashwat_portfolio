@@ -32,25 +32,6 @@ import { ProjectsComponent } from './components/projects/projects.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'portfolio-shashwat';
-
-  ngOnInit() {
-    this.initScrollAnimations();
-  }
-
-  initScrollAnimations() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    // We'll apply this after a small delay to ensure DOM is ready
-    setTimeout(() => {
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    }, 500);
-  }
 }
