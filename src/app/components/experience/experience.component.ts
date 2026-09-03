@@ -13,13 +13,28 @@ export class ExperienceComponent {
   experiences = [
     {
       company: 'Axis Bank',
-      role: 'Deputy Manager - IT Strategy & Infrastructure',
       period: 'June 2024 - Present',
-      tags: ['Strategy', 'Infrastructure', 'BCDR', 'Risk Management'],
-      highlights: [
-        'Directing enterprise resilience strategy for 600+ critical applications, ensuring 100% regulatory compliance.',
-        'Architecting Disaster Recovery (BCDR) frameworks that protect billion-dollar financial operations.',
-        'Bridging the gap between technical infrastructure teams and C-suite leadership through data-driven strategic insights.'
+      tags: ['Strategy', 'Infrastructure', 'BCDR', 'Risk Management', 'Leadership'],
+      roles: [
+        {
+          title: 'Manager – IT Strategy & Infrastructure',
+          period: 'April 2026 - Present',
+          current: true,
+          highlights: [
+            'Directing enterprise resilience strategy for 600+ critical banking applications, ensuring 100% regulatory compliance.',
+            'Architecting Disaster Recovery (BCDR) frameworks that protect billion-dollar financial operations.',
+            'Driving AI-driven automation workflows and architectural standards across cross-functional operations.'
+          ]
+        },
+        {
+          title: 'Deputy Manager – IT Strategy & Infrastructure',
+          period: 'June 2024 - April 2026',
+          current: false,
+          highlights: [
+            'Governed infrastructure resilience programs and Disaster Recovery drills across core banking platforms.',
+            'Bridged technical infrastructure teams and C-suite leadership through data-driven risk management insights.'
+          ]
+        }
       ],
       description: 'Lead enterprise strategy and planning initiatives for Infrastructure Resilience and Disaster Recovery. Act as a strategic liaison between infrastructure, security, and leadership teams to translate technical data into executive insights.',
       color: 'from-green-600/40 to-emerald-900/40'
